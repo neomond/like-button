@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Svg, {Path} from 'react-native-svg';
 
-const LikeIcon = ({isLiked, onPress, item, userId}) => {
+const LikeIcon = ({item, userId}) => {
   const [pressed, setPressed] = useState();
 
   useEffect(() => {

@@ -73,8 +73,8 @@ const PostComponent = () => {
                     <View style={{flexDirection: 'row'}}>
                       <TouchableOpacity onPress={() => handleLike(item._id)}>
                         <LikeIcon
-                          isLiked={item.isLiked}
-                          onPress={updateLikeCount}
+                          // isLiked={item.isLiked}
+                          // onPress={updateLikeCount}
                           item={item}
                           userId={userId}
                         />

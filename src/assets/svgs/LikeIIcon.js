@@ -32,3 +32,25 @@ const LikeIcon = ({isLiked, onPress, item, userId}) => {
 };
 
 export default LikeIcon;
+
+// <TouchableOpacity onPress={() => handleLike(item._id)}>: This is a component from React Native that renders a touchable area that responds to user presses. When the touchable area is pressed, it triggers the handleLike function with the item._id as an argument. It's likely that item represents a specific post object in a list, and item._id uniquely identifies that post.
+
+// <LikeIcon isLiked={item.isLiked} onPress={updateLikeCount} item={item} userId={userId} />: This is the rendering of the LikeIcon component. It receives several props:
+
+// isLiked: This prop seems to indicate whether the post is already liked. However, in this code snippet, it is not used.
+// onPress: This prop seems to indicate an updateLikeCount function, but it is not used either.
+// item: This prop represents the post object that the LikeIcon component is associated with.
+// userId: This prop represents the ID of the user who is interacting with the component.
+// const [pressed, setPressed] = useState();: This line uses the useState hook to define a state variable called pressed and a function setPressed to update its value. The initial value of pressed is not explicitly set here, so it will be undefined initially.
+
+// useEffect(() => { ... }, [item]);: This is a useEffect hook that runs whenever the item prop changes. In this case, it is likely that the item represents a post object, and this effect is triggered whenever the item prop is updated.
+
+// Inside the useEffect hook:
+
+// const isLiked = item.likes.find(e => e == userId);: This line checks if the userId is present in the item.likes array. It uses the Array.prototype.find() method to search for a matching element. If a match is found, the isLiked variable will hold that element; otherwise, it will be undefined.
+
+// if (isLiked) { setPressed(true); } else { setPressed(false); }: This condition checks the value of isLiked. If isLiked is truthy (meaning the user has already liked the post), setPressed(true) is called to update the pressed state to true. Otherwise, setPressed(false) is called to update the pressed state to false.
+
+// Finally, the pressed state is used to determine the fill and stroke colors of the rendered SVG icon in the LikeIcon component. When pressed is true, the fill and stroke colors will be set to #ECEBED; otherwise, they will be set to #727477.
+
+// In summary, this code snippet sets up a touchable area (TouchableOpacity) that triggers the handleLike function when pressed. It also renders a LikeIcon component that visually represents the like status of a post. The LikeIcon component checks if the user represented by userId has already liked the post (item). Based on the result, the pressed state is updated, which in turn determines the visual representation of the SVG icon.

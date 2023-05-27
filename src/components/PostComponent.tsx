@@ -20,14 +20,12 @@ const PostComponent = () => {
   );
   const [likeCounts, setLikeCounts] = useState<{[postId: string]: number}>({});
   const userId = '6411780de8b30ccf9df2aa7b';
+
   useEffect(() => {
     dispatch(getPosts());
   }, []);
-  //   console.log(posts);
 
   const handleLike = (postId: string) => {
-    console.log('geldimee');
-
     dispatch(likePosts({postId, userId}));
   };
 

@@ -1,14 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {TouchableOpacity} from 'react-native';
 import Svg, {Path} from 'react-native-svg';
 
 const LikeIcon = ({isLiked, onPress, item, userId}) => {
   const [pressed, setPressed] = useState();
 
-  // const handlePress = () => {
-  //   setPressed(!pressed);
-  //   onPress(!pressed);
-  // };
   useEffect(() => {
     const isliked = item.likes.find(e => e == userId);
     if (isliked) {
@@ -16,7 +11,6 @@ const LikeIcon = ({isLiked, onPress, item, userId}) => {
     } else {
       setPressed(false);
     }
-    console.log();
   }, [item]);
 
   return (
